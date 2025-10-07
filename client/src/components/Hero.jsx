@@ -1,10 +1,23 @@
-export default function Hero(){
+import { motion } from "framer-motion";
+
+export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-white to-indigo-50 py-8 rounded-lg p-6">
-      <div className="max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold">Simple, fast & elegant shop demo</h1>
-        <p className="text-gray-600 mt-2">Quản lý sản phẩm, tạo listing và trình diễn với giao diện đẹp, responsive.</p>
-      </div>
-    </section>
-  )
+    <motion.section
+      className="bg-gradient-to-r from-primary to-blue-500 text-white py-20 text-center"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="text-4xl font-bold mb-3">Welcome to MyShop</h1>
+      <p className="text-lg text-blue-100 mb-5">
+        Manage your products easily and beautifully
+      </p>
+      <a
+        href="/create"
+        className="px-6 py-3 bg-white text-primary rounded-full font-medium hover:bg-blue-100 transition"
+      >
+        Add Product
+      </a>
+    </motion.section>
+  );
 }
